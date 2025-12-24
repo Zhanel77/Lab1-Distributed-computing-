@@ -24,12 +24,13 @@ The project also demonstrates **failure handling**, including **timeouts and ret
 ---
 
 ## Project Structure
+```yaml
 .
 ├── server.py # RPC server
 ├── client.py # RPC client
 └── README.md
 
-yaml
+```
 ---
 
 ## RPC Message Format
@@ -45,7 +46,7 @@ Requests are sent in JSON format:
 ```
 Responses from the server:
 
-json
+```json
 Копировать код
 {
   "request_id": "uuid",
@@ -53,7 +54,7 @@ json
   "result": 12
 }
 ```
-Setup Instructions
+## Setup Instructions
 1. Create EC2 Instances
 Launch two EC2 instances with Ubuntu 22.04
 
@@ -105,8 +106,9 @@ RPC_DELAY_SEC=5 python3 server.py
 ```
 The client timeout is set to 2 seconds, with 3 retries.
 Observed behavior:
-The client does not receive a response in time
-The request is retried multiple times
+- The client does not receive a response in time
+- The request is retried multiple times
+
 After all retries, the client returns:
 ```makefile
 ERROR: Timeout after retries
